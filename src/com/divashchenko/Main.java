@@ -55,7 +55,7 @@ public class Main {
         for (int i = 0; i < words.length; i++) {
             for (int j = 0; j < words[i].length(); j++) {
                 if (words[i].charAt(j) >= 'A' && words[i].charAt(j) <= 'Z') {
-                    sb.append(MORSE[words[i].charAt(j) - 41]);
+                    sb.append(MORSE[words[i].charAt(j) - 65]);
                 } else if (words[i].charAt(j) >= 'a' && words[i].charAt(j) <= 'z') {
                     sb.append(MORSE[words[i].charAt(j) - 97]);
                 } else {
