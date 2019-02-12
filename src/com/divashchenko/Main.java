@@ -46,18 +46,18 @@ public class Main {
     }
 
     public static int uniqueMorseRepresentations(String[] words) {
-        final String[] MORSE = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..",
-                "--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        final String[] MORSE = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..",
+                "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
 
         StringBuilder sb = new StringBuilder();
         HashSet<String> setMorse = new HashSet<>();
 
-        for (int i = 0; i < words.length; i++) {
-            for (int j = 0; j < words[i].length(); j++) {
-                if (words[i].charAt(j) >= 'A' && words[i].charAt(j) <= 'Z') {
-                    sb.append(MORSE[words[i].charAt(j) - 65]);
-                } else if (words[i].charAt(j) >= 'a' && words[i].charAt(j) <= 'z') {
-                    sb.append(MORSE[words[i].charAt(j) - 97]);
+        for (String word : words) {
+            for (int j = 0; j < word.length(); j++) {
+                if (word.charAt(j) >= 'A' && word.charAt(j) <= 'Z') {
+                    sb.append(MORSE[word.charAt(j) - 65]);
+                } else if (word.charAt(j) >= 'a' && word.charAt(j) <= 'z') {
+                    sb.append(MORSE[word.charAt(j) - 97]);
                 } else {
                     throw new IllegalArgumentException("Wrong command!");
                 }
